@@ -4,7 +4,7 @@ import classes from "./114 BurgerIngredient.css"
 
 const burgerIngridient = ( props ) => {
     switch( props.type ) {
-        case ( ' bread-bottom ' ): 
+        case ( 'bread-bottom' ): 
             return <div className={classes.BreadBottom}></div>
         case ( 'bread-top' ):
             return (
@@ -13,13 +13,13 @@ const burgerIngridient = ( props ) => {
                     <div className={classes.Seeds2}></div>
                 </div>
             );
-        case ( ' meat ' ):
+        case ( 'meat' ):
             return <div className={classes.Meat}></div>
-        case ( ' beacon ' ):
-            return <div className={classes.Beacon}></div>
-        case ( ' cheese ' ):
+        case ( 'beacon' ):
+            return <div className={classes.Bacon}></div>
+        case ( 'cheese' ):
             return <div className={classes.Cheese}></div>
-        case ( ' salad ' ):
+        case ( 'salad' ):
             return <div className={classes.Salad}></div>
         default: 
             return null;
