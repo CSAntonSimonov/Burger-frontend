@@ -22,7 +22,8 @@ const buildControls = (props) => {
         })}
         <button 
             className={classes.OrderButton}
-            disabled={!props.purshacable}>ORDER NOW!</button>
+            disabled={!props.purshacable}
+            onClick={props.purshacing}>ORDER NOW!</button>
         </div>
     );
 }
