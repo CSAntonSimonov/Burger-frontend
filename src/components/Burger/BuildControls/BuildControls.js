@@ -2,6 +2,7 @@ import React from 'react'
 
 import BuildControl from "./BuildControl/BuildControl"
 import classes from './BuildControls.css'
+import ParticleEffectButton from 'react-particle-effect-button'
 
 const buildControls = (props) => {
     let ingridients = ['salad', 'meat', 'cheese', "beacon"]
@@ -20,11 +21,16 @@ const buildControls = (props) => {
                 removeIngridient={() => props.removeIngridient(index)}
                 />
         })}
+        <ParticleEffectButton
+            hidden={props.hidden}
+            color='#A0DB41'>
         <button 
             className={classes.OrderButton}
             disabled={!props.purshacable}
             onClick={props.purshacing}>ORDER NOW!</button>
+        </ParticleEffectButton>
         </div>
+        
     );
 }
 

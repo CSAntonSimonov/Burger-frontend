@@ -1,0 +1,14 @@
+.Order h3, p, li {
+    text-align: center
+}
+
+.Order {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+}

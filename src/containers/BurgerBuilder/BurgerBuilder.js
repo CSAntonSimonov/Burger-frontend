@@ -23,7 +23,8 @@ class BurgerBuilder extends Component {
         },
         totalPrice: 4,
         purshacable: false,
-        showOrderModal: false
+        showOrderModal: false,
+        hidden: false
     }
 
     makePurshacable (ingridients) {
@@ -38,12 +39,12 @@ class BurgerBuilder extends Component {
         this.setState({purshacable: sum > 0})
     }
 
-    showOrderModalHandler = () => {
-        this.setState({showOrderModal: true})
+    showOrderModalHandler = async () => {
+        await this.setState({showOrderModal: true, hidden: true})
     }
 
-    closeOrderModalHandler = () => {
-        this.setState({showOrderModal: false})
+    closeOrderModalHandler = async () => {
+        await this.setState({showOrderModal: false, hidden: false})
     }
 
     addIngridient = ( index ) => {
@@ -88,7 +89,9 @@ class BurgerBuilder extends Component {
         return (
             <Aux>
                 <Modal show={this.state.showOrderModal} click={this.closeOrderModalHandler}>
-                    <OrderSummary ingridients={this.state.ingridients} />
+                    <OrderSummary ingridients={this.state.ingridients} closeModal={this.closeOrderModalHandler}
+                        total={this.state.totalPrice}
+                    />
                 </Modal>
                 <div>
                     <Burger ingiridents={this.state.ingridients}/>
@@ -101,6 +104,7 @@ class BurgerBuilder extends Component {
                         removeIngridient={this.removeIngridient}
                         purshacable={this.state.purshacable}
                         purshacing={this.showOrderModalHandler}
+                        hidden={this.state.hidden}
                         />
                 </div>
             </Aux>
